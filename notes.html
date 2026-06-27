@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>発表者ノート ｜ 8時だヨ勉強会 #1</title>
+<meta name="description" content="発表者用の進行台本（タダカヨ 8時だヨ勉強会 #1）">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect x='10' y='10' width='44' height='44' fill='none' stroke='%23e33535' stroke-width='5'/%3E%3Ctext x='32' y='44' font-family='sans-serif' font-size='34' font-weight='900' text-anchor='middle' fill='%23e33535'%3E%E3%82%AB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.notes-wrap { padding: 48px 0; }
+.notes-banner {
+  background: var(--c-red);
+  color: var(--c-white);
+  padding: 6px 14px;
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+.script-block {
+  background: var(--c-white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: var(--shadow-sm);
+  border-left: 5px solid var(--c-red);
+}
+.script-time {
+  display: inline-block;
+  background: var(--c-black);
+  color: var(--c-white);
+  font-weight: 900;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.script-block h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 900;
+}
+.script-block p.say {
+  font-size: 15px;
+  line-height: 2;
+  margin: 0 0 16px;
+  padding: 16px;
+  background: var(--c-pink-soft);
+  border-radius: 8px;
+}
+.script-block p.do {
+  font-size: 14px;
+  color: var(--c-gray-text);
+  margin: 0 0 8px;
+  padding-left: 20px;
+  position: relative;
+}
+.script-block p.do::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: var(--c-red);
+  font-size: 10px;
+  top: 6px;
+}
+.script-block .timer {
+  display: inline-block;
+  font-size: 11px;
+  background: var(--c-gray);
+  color: var(--c-gray-text);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.checklist {
+  background: var(--c-gray);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin: 32px 0;
+}
+.checklist h3 { margin: 0 0 12px; font-size: 18px; font-weight: 700; }
+.checklist ul { margin: 0; padding-left: 1.2em; line-height: 2; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand-lockup" aria-label="トップへ戻る">
+      <img src="images/logo-rect.png" alt="NPO法人タダカヨ" class="brand-logo-img" width="280" height="60">
+      <span class="brand-tagline">8時だヨ勉強会 #1 ／ 発表者ノート</span>
+    </a>
+    <nav class="site-nav"><a href="index.html">参加者ページへ</a></nav>
+  </div>
+</header>
+
+<main class="notes-wrap">
+  <div class="container">
+    <span class="notes-banner">FOR PRESENTER ONLY</span>
+    <h1 style="font-size:32px;font-weight:900;line-height:1.4;margin:0 0 16px;">発表者ノート（進行台本）</h1>
+    <p style="color:var(--c-gray-text);line-height:2;margin:0 0 24px;">この台本は発表者用です。〈SAY〉が発話例、〈DO〉が画面操作・進行メモ。総時間 37分。1セクション7分は意外と長いので、間を恐れずに。</p>
+
+    <div class="checklist">
+      <h3>開始前チェック（−10分まで）</h3>
+      <ul>
+        <li>Zoom画面共有テスト（このサイト・NotebookLM・PDF閲覧）</li>
+        <li>NotebookLMを開いてログイン状態確認、サンプルノートブックを準備</li>
+        <li>サンプルPDFをすでに1ノートブックに入れておく（当日アップロードは時間ロス）</li>
+        <li>音量チェック（Audio Overviewを聴かせる場面あり）</li>
+        <li>このサイトのURLをチャット欄に貼れる状態でスタンバイ</li>
+        <li>「個人情報は今日のデモに入れない」ことを再度自分に念押し</li>
+      </ul>
+    </div>
+
+    <!-- ============================================================
+         説明パート 7分
+         ============================================================ -->
+    <h2 style="font-size:26px;font-weight:900;margin:48px 0 8px;border-bottom:3px solid var(--c-red);padding-bottom:8px;">説明パート（7分）</h2>
+
+    <div class="script-block">
+      <span class="script-time">0:00 — 0:01　オープニング</span>
+      <h3>① ごあいさつ・タダカヨ紹介</h3>
+      <p class="say">こんばんは。タダカヨ「8時だヨ勉強会」の第1回にお越しいただきありがとうございます。タダカヨは「タダで、カイゴを、ヨくしよう！」という、介護現場で使える無料ITを広めるNPOです。今日は資料配布なしのオンライン限定で、すべてこのサイトに残してあります。あとで自分のペースで戻れます。</p>
+      <p class="do">画面：サイトのトップを共有。URLをチャットに貼る。</p>
+      <p class="do">時間目安：60秒以内 <span class="timer">タイマー開始</span></p>
+    </div>
+
+    <div class="script-block">
+      <span class="script-time">0:01 — 0:03　なぜ今、AI？</span>
+      <h3>② ケアマネさんの「書類地獄」と、無料AIの追い風</h3>
+      <p class="say">ケアマネさんの一日のなかで、書類仕事って、本当に多いですよね。アセスメント、モニタリング記録、サービス担当者会議の議事録、ご家族への説明…。<br><br>2026年の今、無料で使えるAIが、この書類仕事の「下書き」を一気に作ってくれる時代になりました。ChatGPT、Gemini、Claude、そしてNotebookLM。どれも基本機能は無料です。<br><br>今日はそのなかから、ケアマネ業務にいちばんハマる「NotebookLM」だけに絞ってお話しします。</p>
+      <p class="do">画面：サイトの「なぜNotebookLM」セクションへスクロール。</p>
+    </div>
+
+    <div class="script-block">
+      <span class="script-time">0:03 — 0:05　NotebookLMの3つの強み</span>
+      <h3>③ 「自分の資料だけ読む」AI司書</h3>
+      <p class="say">NotebookLMの最大の特徴は、「自分がアップロードした資料の中だけ」から答えることです。インターネット全体を検索するChatGPTとは違って、自分が入れた厚労省の通知やマニュアルだけを「ふんふん」と読んでくれて、しかも「どのページに書いてあったか」を引用してくれる。<br><br>これ、ケアマネさんの「根拠が必要な仕事」と相性が良いんです。さらに、PDFをまるごと放り込めて、無料で1冊あたり50個のファイルまでOK。音声概要という、AIがポッドキャスト風に解説してくれる機能もある。</p>
+      <p class="do">画面：3つのカードを順に指さしながら説明。</p>
+    </div>
+
+    <div class="script-block">
+      <span class="script-time">0:05 — 0:06　安全について</span>
+      <h3>④ 個人情報の取り扱い、3つの約束</h3>
+      <p class="say">使う前に、3つだけお約束させてください。①利用者さんの個人情報は入れない。②事業所のルールがあればそちらを優先。③AIが出した文章はあくまで「下書き」、必ずご自分で読み直してから使う。これだけ守れば、今日のデモは全部安全に再現できます。</p>
+      <p class="do">画面：安全セクションを共有。</p>
+    </div>
+
+    <div class="script-block">
+      <span class="script-time">0:06 — 0:07　ワーク前のひと言</span>
+      <h3>⑤ ここから30分の「観るワーク」へ</h3>
+      <p class="say">ここから30分は、私が画面で実演します。手元で一緒に触る方はそれもOK。観るだけでも、あとからこのサイトを見れば再現できますので、「これ、自分の仕事のどこに使えそうかな」を考えながら見てください。最後の5分で、みなさんから30秒ずつ聞かせていただきます。</p>
+      <p class="do">画面：NotebookLMタブに切り替え準備。</p>
+    </div>
+
+    <!-- ============================================================
+         ワーク 30分
+         ============================================================ -->
+    <h2 style="font-size:26px;font-weight:900;margin:48px 0 8px;border-bottom:3px solid var(--c-red);padding-bottom:8px;">観るワーク（30分）</h2>
+
+    <div class="script-block">
+      <span class="script-time">0:07 — 0:14　ワーク①</span>
+      <h3>厚労省PDFを「3行で要約」してもらう</h3>
+      <p class="say">最初は、シンプルに要約から行きます。事前にこのノートブックに、厚労省の「介護保険最新情報 Vol.◯◯」を入れておきました。それでは、こんなふうに聞いてみます。</p>
+      <p class="do">プロンプト入力：「この資料を、ケアマネジャー向けに3行で要約してください。専門用語は1度かみくだいてから使ってください。」</p>
+      <p class="do">回答が出るあいだに、ソースの引用機能（数字をクリックするとPDFの該当ページに飛ぶ）を説明。</p>
+      <p class="do">回答が出たら、引用番号をクリックして「ちゃんと根拠が追える」のを見せる。</p>
+      <p class="say">どうですか、これだけでも、新しい通知が来たときに「で、要するに何？」を30秒で掴めるようになります。読み込みの時間が短くなる、これは大きい。</p>
+    </div>
+
+    <div class="script-block">
+      <span class="script-time">0:14 — 0:21　ワーク②</span>
+      <h3>同じ資料を「家族向け説明文」に変換する</h3>
+      <p class="say">次に、いまの資料をそのまま、こんどはご家族向けの説明文に変換させます。</p>
+      <p class="do">プロンプト入力：「この資料の内容を、利用者のご家族（70代）にお渡しするA4半分くらいの説明文に書き換えてください。むずかしい言葉は使わず、やさしい敬体（です・ます）で。」</p>
+      <p class="say">これがケアマネ業務にハマるポイントです。同じ情報を、相手によって「言い方を変える」というのは、私たちが日常的にやっている仕事ですよね。それを、下書きまでAIに任せられる。<br><br>もちろん、出てきたものをそのまま渡してはダメです。読み直して、その方に合わせて手を入れる。でも、白紙から書くのと、下書きを直すのとでは、しんどさが全然ちがいます。</p>
+      <p class="do">出力例を読み上げながら「ここの言い回しは現場ならこう直すよね」を口頭で添える。</p>
+    </div>
+
+    <div class="script-block">
+      <span class="script-time">0:21 — 0:28　ワーク③</span>
+      <h3>音声概要（Audio Overview）を生成して聴く</h3>
+      <p class="say">最後のデモです。これがNotebookLM独自の機能で、いちばん「おお」となるところ。同じ資料から、2人のAIが日本語で対話する3〜10分くらいのポッドキャストを自動で作ってくれます。</p>
+      <p class="do">画面右の「Audio Overview」→「生成」をクリック。生成は数分かかるので、待っている間に活用イメージを語る。</p>
+      <p class="say">これ、何がうれしいかというと、移動中・訪問の合間・洗い物しながら、「耳で勉強できる」んですよ。新しい通知の内容を、運転しながら聴いて頭に入れておく。ご家族との面談前に、5分だけ聴いて要点を確認する。「読む時間がない」を、「聴く時間ならある」に変えられる。</p>
+      <p class="do">生成完了したら冒頭1〜2分だけ再生して聴かせる。</p>
+      <p class="say">どうですか、これがあの長いPDFから自動で出来ています。無料版は1日3本まで生成できます。</p>
+    </div>
+
+    <div class="script-block">
+      <span class="script-time">0:28 — 0:33　全員シェア</span>
+      <h3>1人30秒「自分の業務でどこに使えそう？」</h3>
+      <p class="say">それでは、最後にみなさんから一言ずついただきたいです。1人30秒、「自分の業務のどこに使えそうかな」を、感想程度で構いません。10名で5分。パスもOKです。</p>
+      <p class="do">名簿順に指名。30秒ぴったりでサクサク回す。出てきた声はあとでまとめる。</p>
+      <p class="do">時間が押したらパス可を強調。</p>
+    </div>
+
+    <div class="script-block">
+      <span class="script-time">0:33 — 0:37　締め</span>
+      <h3>サイト案内・次回告知・Q&A</h3>
+      <p class="say">本日の内容はぜんぶ、このサイトに残してあります。手順もプロンプトもコピペで使えます。「あとでやってみたい」の方は、Googleアカウントだけ用意して、サイトのSTEP 1から進めてみてください。<br><br>次回の8時だヨ勉強会は、みなさんの「使ってみたい」の声を元にテーマを決めます。今日は本当にありがとうございました。</p>
+      <p class="do">サイトURLを再度チャットに貼る。アンケート（あれば）を案内。</p>
+    </div>
+
+    <!-- ============================================================
+         予備
+         ============================================================ -->
+    <h2 style="font-size:26px;font-weight:900;margin:48px 0 8px;border-bottom:3px solid var(--c-red);padding-bottom:8px;">予備・トラブル対応</h2>
+
+    <div class="checklist">
+      <h3>もし時間が余ったら</h3>
+      <ul>
+        <li>「FAQ自動生成」プロンプトを追加で実演：<br><code style="background:var(--c-gray);padding:2px 6px;border-radius:4px;">この資料からよくありそうな質問を5つ作って、それぞれに答えてください。</code></li>
+        <li>YouTubeのケアマネ研修動画を1本ソースに追加して、要約させる（資料形式の多様性デモ）</li>
+        <li>「研修参加者への配布資料」プロンプト：<br><code style="background:var(--c-gray);padding:2px 6px;border-radius:4px;">この資料の要点を、職員向け勉強会のレジュメ（A4 1枚）にまとめてください。</code></li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h3>もし時間が足りなくなったら</h3>
+      <ul>
+        <li>ワーク②（家族向け変換）を短縮：出力中の途中で「ここで止めますね、続きはサイトで」</li>
+        <li>シェアタイムを30秒→「チャットに一言だけ書いてください」に切り替え</li>
+        <li>Audio Overview再生は冒頭30秒で切り上げ可</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h3>よくある質問への準備回答</h3>
+      <ul>
+        <li><strong>「日本語の精度は？」</strong>　2026年現在、日本語の音声概要・テキスト要約とも実用レベル。多少の不自然さは残るが下書きとして十分。</li>
+        <li><strong>「個人情報を入れて大丈夫？」</strong>　Google個人アカウントの利用規約では学習に使われない明記があるが、無料サービスの規約は変わりうるため、原則「入れない」運用が安全。</li>
+        <li><strong>「有料版にする必要は？」</strong>　月2,900円のPro版があるが、最初は無料版で慣れることをおすすめ。チャット50回/日・音声3本/日で個人利用なら十分。</li>
+        <li><strong>「うちの法人で使っていい？」</strong>　法人のITガイドラインに依存。管理者に「個人情報を入れない範囲で試したい」と相談するのが先。</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo-rect.png" alt="NPO法人タダカヨ" class="brand-logo-img" width="280" height="60">
+      <p>発表者ノート（非公開推奨）</p>
+    </div>
+    <p class="footer-meta">© 2026 タダカヨ 8時だヨ勉強会 #1</p>
+  </div>
+</footer>
+
+</body>
+</html>

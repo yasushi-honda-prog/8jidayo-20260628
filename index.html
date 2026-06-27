@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>8時だヨ勉強会 #1 ｜ NotebookLM はじめの一歩 ｜ タダカヨ</title>
+<meta name="description" content="ケアマネジャー向け・無料AIで業務を楽にする勉強会。2026年6月28日。NotebookLMをはじめて触る人のための37分コンパクト講座。">
+<meta name="theme-color" content="#e33535">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Crect x='10' y='10' width='44' height='44' fill='none' stroke='%23e33535' stroke-width='5'/%3E%3Ctext x='32' y='44' font-family='sans-serif' font-size='34' font-weight='900' text-anchor='middle' fill='%23e33535'%3E%E3%82%AB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/easter.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand-lockup" aria-label="NPO法人タダカヨ｜介護×無料IT｜タダでカイゴをヨくしよう！">
+      <img src="images/logo-rect.png" alt="NPO法人タダカヨ" class="brand-logo-img" width="280" height="60">
+    </a>
+    <nav class="site-nav" aria-label="ページ内ナビ">
+      <a href="#agenda">進行</a>
+      <a href="#why">なぜ</a>
+      <a href="#safety">安全</a>
+      <a href="#handson">手順</a>
+      <a href="#links">参考</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero-banner-wrap">
+  <img src="images/hero-banner.jpg" alt="NPO法人タダカヨ — 介護×無料IT — タダでカイゴをヨくしよう！" class="hero-banner-img" width="1440" height="456" fetchpriority="high">
+</div>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="hero-eyebrow">タダカヨ 8時だヨ勉強会 #1 ｜ 2026.06.28（日）</p>
+    <h1 class="hero-title">
+      <span class="hero-line1">「タダ」のAIで、</span>
+      <span class="hero-line2">ケアマネの<span class="hero-mark">書類地獄</span>を</span>
+      <span class="hero-line3">ちょっとだけ抜け出す。</span>
+    </h1>
+    <p class="hero-sub">
+      きょうの主役は <strong>NotebookLM</strong>。Googleが出している、自分の資料だけを読んでくれる「AI司書」です。<br>
+      <span class="hero-sub-strong">37分だけ</span>、いっしょに触ってみましょう。
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">開催</span>
+        <span class="hero-meta-value">2026年6月28日（日）<br>オンライン（Zoom）</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">所要</span>
+        <span class="hero-meta-value">説明 7分<br>＋ ワーク 30分</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">対象</span>
+        <span class="hero-meta-value">ケアマネジャー<br>と関心のある方</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">準備</span>
+        <span class="hero-meta-value">なしでOK<br>（スマホ/PCで見るだけ可）</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="agenda" class="section section-light">
+  <div class="container">
+    <p class="section-eyebrow">AGENDA</p>
+    <h2 class="section-title">今日のながれ</h2>
+    <p class="section-lead">トータル<strong>37分</strong>。短いぶん、観るだけでも持って帰れるものがあるように作っています。</p>
+
+    <ol class="agenda-list">
+      <li class="agenda-item">
+        <span class="agenda-time">0:00 — 0:07</span>
+        <div class="agenda-body">
+          <h3 class="agenda-head">説明パート（7分）</h3>
+          <p>「なぜAI？」「なぜNotebookLM？」「個人情報はどう扱う？」を一気にお話しします。</p>
+        </div>
+      </li>
+      <li class="agenda-item">
+        <span class="agenda-time">0:07 — 0:14</span>
+        <div class="agenda-body">
+          <h3 class="agenda-head">観るワーク①　厚労省PDFを要約してもらう</h3>
+          <p>長い通知文書を「3行で」「中学生にもわかるように」要約させる様子を一緒に観ます。</p>
+        </div>
+      </li>
+      <li class="agenda-item">
+        <span class="agenda-time">0:14 — 0:21</span>
+        <div class="agenda-body">
+          <h3 class="agenda-head">観るワーク②　家族向け説明文に変換する</h3>
+          <p>同じ資料を「ご家族にお渡しする説明文」に書き換えてもらいます。</p>
+        </div>
+      </li>
+      <li class="agenda-item">
+        <span class="agenda-time">0:21 — 0:28</span>
+        <div class="agenda-body">
+          <h3 class="agenda-head">観るワーク③　音声概要を生成して聴く</h3>
+          <p>2人のAIが日本語で対話するポッドキャストを自動生成。「移動中に勉強する」イメージをつかみます。</p>
+        </div>
+      </li>
+      <li class="agenda-item">
+        <span class="agenda-time">0:28 — 0:33</span>
+        <div class="agenda-body">
+          <h3 class="agenda-head">シェア（5分）</h3>
+          <p>「自分の業務でどこに使えそう？」を、1人30秒だけ話していただきます（パスもOK）。</p>
+        </div>
+      </li>
+      <li class="agenda-item">
+        <span class="agenda-time">0:33 — 0:37</span>
+        <div class="agenda-body">
+          <h3 class="agenda-head">締め（4分）</h3>
+          <p>このサイトの使い方、次回のお知らせ、Q&A。</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="why" class="section">
+  <div class="container">
+    <p class="section-eyebrow">WHY NOTEBOOKLM</p>
+    <h2 class="section-title">どうしてケアマネに <span class="brand-logo brand-inline">タダ<span class="ka">カ</span>ヨ</span> は <em>NotebookLM</em> をすすめるの？</h2>
+    <p class="section-lead">
+      ChatGPT も Gemini も Claude もすばらしいのですが、<strong>「自分の資料だけ」を読んでもらえる</strong>という一点で、ケアマネ業務にいちばんハマるのが NotebookLM です。
+    </p>
+
+    <div class="card-grid">
+      <article class="card">
+        <span class="card-num">01</span>
+        <h3 class="card-title">嘘の出典が出にくい</h3>
+        <p>アップロードした資料の中だけを根拠にして答えるので、「どこに書いてあったか」が引用付きで返ってきます。通知やマニュアルを根拠にする仕事と相性が良い。</p>
+      </article>
+      <article class="card">
+        <span class="card-num">02</span>
+        <h3 class="card-title">PDFをまるごと扱える</h3>
+        <p>厚労省・自治体の通知や事業所マニュアルなど、長くて読むのがしんどいPDFを「まとめて投げる」だけ。1冊50ソースまで、無料で使えます。</p>
+      </article>
+      <article class="card">
+        <span class="card-num">03</span>
+        <h3 class="card-title">耳でも勉強できる</h3>
+        <p>「音声概要」機能で、2人のAIが日本語の対話形式で内容を解説してくれます。通勤・訪問の移動中に、ながら聴きで学べる。</p>
+      </article>
+    </div>
+
+    <div class="note-box">
+      <p><strong>今日カバーしないこと：</strong> ケアプラン本体（第2表・第3表）の自動生成、個別具体のアセスメント記入、利用者情報の入力。これらは別の回で、安全面とセットで扱います。</p>
+    </div>
+  </div>
+</section>
+
+<section id="safety" class="section section-pink">
+  <div class="container">
+    <div class="safety-head">
+      <div class="safety-head-text">
+        <p class="section-eyebrow">SAFETY FIRST</p>
+        <h2 class="section-title">使いはじめる前に、<br>3つだけお約束</h2>
+      </div>
+      <img src="images/mascot.png" alt="" class="safety-mascot" id="easter-ka" width="360" height="360" loading="lazy">
+    </div>
+
+    <div class="safety-grid">
+      <div class="safety-item">
+        <span class="safety-no">①</span>
+        <h3>個人情報は入れない</h3>
+        <p>利用者の氏名・住所・電話・既往歴・家族構成などは、無料のAIには入力しない。匿名化してから入れるか、最初は「公開資料だけ」で練習する。</p>
+      </div>
+      <div class="safety-item">
+        <span class="safety-no">②</span>
+        <h3>事業所のルールを優先</h3>
+        <p>所属法人がAI利用ガイドラインを出している場合は、必ずそれに従います。ない場合は管理者に一言確認してから業務利用を。</p>
+      </div>
+      <div class="safety-item">
+        <span class="safety-no">③</span>
+        <h3>AIの答えは「下書き」</h3>
+        <p>そのまま家族や行政に出さない。必ずケアマネ自身が読み直し、判断したうえで使う。AIは「楽にする道具」であって「責任を肩代わりする道具」ではありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="handson" class="section">
+  <div class="container">
+    <p class="section-eyebrow">HANDS-ON</p>
+    <h2 class="section-title">あとから自分で試せる手順</h2>
+    <p class="section-lead">勉強会のあと、おうちで再現できるように、ぜんぶ書き残しておきます。Googleアカウントさえあれば、ここから先は無料で完結します。</p>
+
+    <ol class="step-list">
+      <li class="step">
+        <span class="step-num">STEP 1</span>
+        <div class="step-body">
+          <h3 class="step-title">NotebookLM を開く</h3>
+          <p>ブラウザで <a href="https://notebooklm.google.com/" target="_blank" rel="noopener">notebooklm.google.com</a> にアクセスし、ふだん使っているGoogleアカウントでログインします。「+ 新規作成」を押してノートブックを1冊つくります。</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">STEP 2</span>
+        <div class="step-body">
+          <h3 class="step-title">資料（ソース）を入れる</h3>
+          <p>PDF・テキスト・WebサイトのURL・YouTubeなどを取り込めます。今日は<a href="#sample-source">サンプル資料</a>のリンクからPDFを1本入れてみます。<br><span class="step-tip">📌 最初は厚労省・自治体・職能団体など、公開資料から練習を。</span></p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">STEP 3</span>
+        <div class="step-body">
+          <h3 class="step-title">質問する／変換させる</h3>
+          <p>下のチャット欄に、こんな指示を打ち込んでみます。</p>
+          <div class="prompt-card">
+            <p class="prompt-label">▼ プロンプト例（コピペOK）</p>
+            <pre class="prompt-code">この資料を、ケアマネジャー向けに3行で要約してください。
+専門用語は1度かみくだいてから使ってください。</pre>
+          </div>
+          <div class="prompt-card">
+            <p class="prompt-label">▼ 家族向けに変換</p>
+            <pre class="prompt-code">この資料の内容を、利用者のご家族（70代）にお渡しする
+A4半分くらいの説明文に書き換えてください。
+むずかしい言葉は使わず、やさしい敬体（です・ます）で。</pre>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">STEP 4</span>
+        <div class="step-body">
+          <h3 class="step-title">音声概要を生成する</h3>
+          <p>画面右側の「Audio Overview（音声概要）」から「生成」を押します。数分待つと、2人のAIが日本語で対話する3〜10分のポッドキャストが出来あがります。<br><span class="step-tip">📌 無料版は1日3回まで。1本生成したら、まず聴いてみるのがおすすめ。</span></p>
+        </div>
+      </li>
+    </ol>
+
+    <div id="sample-source" class="sample-source">
+      <h3>今日のサンプル資料</h3>
+      <p>当日のデモでは <strong>厚生労働省「介護保険最新情報」の最新Vol.</strong> を1本使います。リンクから一覧に飛び、最新号のPDFをダウンロードしてください。</p>
+      <ul class="link-list">
+        <li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000206917_00045.html" target="_blank" rel="noopener">厚生労働省：介護保険最新情報（一覧ページ）</a></li>
+      </ul>
+      <p class="sample-tip">📌 一覧の上の方にある最新の Vol. をクリックするとPDFが開きます。それを保存してNotebookLMに入れる、というのが当日の手順です。</p>
+    </div>
+  </div>
+</section>
+
+<section id="links" class="section section-light">
+  <div class="container">
+    <p class="section-eyebrow">GO DEEPER</p>
+    <h2 class="section-title">もっと知りたい人のための入り口</h2>
+
+    <div class="link-grid">
+      <article class="link-card">
+        <h3>タダカヨ公式</h3>
+        <ul>
+          <li><a href="https://tadakayo.jp/" target="_blank" rel="noopener">タダカヨ ホームページ</a></li>
+          <li><a href="https://tadakayo.jp/column-aicare-plan/" target="_blank" rel="noopener">AIケアマネジメント活用術（コラム）</a></li>
+        </ul>
+      </article>
+      <article class="link-card">
+        <h3>NotebookLM 公式</h3>
+        <ul>
+          <li><a href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM トップ</a></li>
+          <li><a href="https://notebooklm.google/" target="_blank" rel="noopener">NotebookLM プロダクトページ</a></li>
+        </ul>
+      </article>
+      <article class="link-card">
+        <h3>ケアマネ向けAI実践</h3>
+        <ul>
+          <li><a href="https://hitori-cm.com/notebooklm/" target="_blank" rel="noopener">ひとりケアマネ：NotebookLM活用記事</a></li>
+          <li><a href="https://hitori-cm.com/ai/" target="_blank" rel="noopener">ChatGPT＆Geminiでの2表文例作成</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta-inner">
+    <h2 class="cta-title">「タダ」のAIで、もう少しだけラクをする。</h2>
+    <p class="cta-text">勉強会の最後に、1人30秒、「自分の業務でどこに使えそう？」を聞かせてください。次回のテーマはそこから決めます。</p>
+    <p class="cta-meta">次回 8時だヨ勉強会 #2 ｜ 詳細は <a href="https://tadakayo.jp/" target="_blank" rel="noopener">タダカヨ公式</a> にて</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-logo footer-logo">タダ<span class="ka">カ</span>ヨ</span>
+      <p>NPO法人タダカヨ ／ 介護 × 無料IT</p>
+    </div>
+    <p class="footer-meta">© 2026 タダカヨ 8時だヨ勉強会 #1 — このページは資料配布のかわりにつくられた限定公開サイトです。</p>
+  </div>
+</footer>
+
+</body>
+</html>
