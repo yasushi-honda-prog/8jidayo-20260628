@@ -1,6 +1,6 @@
 # 8jidayo_20260628
 
-タダカヨ「8時だヨ勉強会 #1」（2026年6月28日開催）のオンライン限定資料サイト。
+タダカヨ「8時だヨ勉強会」（2026年6月28日開催）のオンライン限定資料サイト。
 
 - 参加者向けトップ：`index.html`
 - 発表者用ノート：`notes.html`（noindex設定済、トップからのリンクなし）
@@ -26,7 +26,7 @@ python3 -m http.server 8000
 cd /Users/yyyhhh/Projects/tadakayo/8jidayo_20260628
 git init -b main
 git add .
-git commit -m "Initial: 8時だヨ勉強会 #1 サイト"
+git commit -m "Initial: 8時だヨ勉強会 サイト"
 gh repo create yasushi-honda-prog/8jidayo-20260628 \
   --public \
   --source . \
