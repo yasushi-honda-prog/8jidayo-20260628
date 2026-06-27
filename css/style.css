@@ -160,6 +160,96 @@ a:hover { color: var(--c-red-dark); text-decoration: underline; }
 .site-nav a:hover::after { transform: scaleX(1); }
 
 /* ============================================================
+   Scroll progress bar
+   ============================================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--c-red);
+  z-index: 200;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Open Kit (即始められる3ボタン)
+   ============================================================ */
+.open-kit {
+  padding: var(--space-5) 0;
+  background: linear-gradient(180deg, var(--c-white) 0%, var(--c-pink-soft) 100%);
+  border-bottom: 1px solid var(--c-gray);
+}
+.kit-eyebrow {
+  margin: 0 0 var(--space-3);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c-red);
+  text-align: center;
+}
+.kit-eyebrow::before { content: "▸ "; }
+.kit-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-2);
+  max-width: 920px;
+  margin: 0 auto;
+}
+.kit-btn {
+  background: var(--c-white);
+  border: 2px solid var(--c-black);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none !important;
+  color: var(--c-black);
+  font: inherit;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+  box-shadow: 4px 4px 0 var(--c-black);
+}
+.kit-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--c-black);
+  background: var(--c-pink-soft);
+}
+.kit-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--c-black);
+}
+.kit-btn-primary {
+  background: var(--c-red);
+  color: var(--c-white) !important;
+  border-color: var(--c-red-dark);
+  box-shadow: 4px 4px 0 var(--c-red-dark);
+}
+.kit-btn-primary:hover {
+  background: var(--c-red-dark);
+  box-shadow: 6px 6px 0 var(--c-black);
+}
+.kit-btn-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+.kit-btn-label {
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+.kit-btn-sub {
+  font-size: 12px;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+/* ============================================================
    Hero Banner (key visual)
    ============================================================ */
 .hero-banner-wrap {
@@ -542,6 +632,7 @@ a:hover { color: var(--c-red-dark); text-decoration: underline; }
 }
 
 .prompt-card {
+  position: relative;
   background: var(--c-gray);
   border-radius: var(--radius-sm);
   padding: var(--space-2) var(--space-3);
@@ -550,6 +641,7 @@ a:hover { color: var(--c-red-dark); text-decoration: underline; }
 }
 .prompt-label {
   margin: 0 0 6px;
+  padding-right: 80px;
   font-size: 12px;
   font-weight: 700;
   color: var(--c-red);
@@ -564,6 +656,134 @@ a:hover { color: var(--c-red-dark); text-decoration: underline; }
   white-space: pre-wrap;
   word-break: break-word;
   background: transparent;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Copy Button (prompt-card内)
+   ============================================================ */
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--c-white);
+  border: 1.5px solid var(--c-red);
+  color: var(--c-red);
+  font-weight: 700;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  font-family: inherit;
+  letter-spacing: 0.05em;
+}
+.copy-btn:hover {
+  background: var(--c-red);
+  color: var(--c-white);
+}
+.copy-btn.copied {
+  background: var(--c-black);
+  color: var(--c-white);
+  border-color: var(--c-black);
+}
+.copy-btn.copied::before {
+  content: "✓ ";
+}
+
+/* ============================================================
+   Prompt Modal (Open Kitから起動)
+   ============================================================ */
+.prompt-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s var(--ease), visibility 0.25s var(--ease);
+}
+.prompt-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+.prompt-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+.prompt-modal-content {
+  position: relative;
+  background: var(--c-white);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  width: calc(100vw - 32px);
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  padding: var(--space-4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: translateY(20px);
+  transition: transform 0.3s var(--ease);
+}
+.prompt-modal.show .prompt-modal-content {
+  transform: translateY(0);
+}
+.prompt-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--c-gray);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-gray-text);
+  transition: background 0.2s, color 0.2s;
+}
+.prompt-modal-close:hover {
+  background: var(--c-black);
+  color: var(--c-white);
+}
+.prompt-modal-title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 900;
+  padding-right: 40px;
+}
+.prompt-modal-sub {
+  margin: 0 0 var(--space-3);
+  font-size: 13px;
+  color: var(--c-gray-text);
+}
+.prompt-modal-item {
+  border-top: 1px solid var(--c-gray);
+  padding: var(--space-3) 0;
+}
+.prompt-modal-item:last-child { padding-bottom: 0; }
+.prompt-modal-label {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-red);
+}
+.prompt-modal-text {
+  background: var(--c-gray);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.85;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'Noto Sans JP', sans-serif;
   font-weight: 500;
 }
 

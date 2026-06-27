@@ -11,9 +11,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script defer src="js/ux.js"></script>
 <script defer src="js/easter.js"></script>
 </head>
 <body>
+
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -35,6 +38,29 @@
 <div class="hero-banner-wrap">
   <img src="images/hero-banner.jpg" alt="NPO法人タダカヨ — 介護×無料IT — タダでカイゴをヨくしよう！" class="hero-banner-img" width="1440" height="456" fetchpriority="high">
 </div>
+
+<section class="open-kit" aria-label="即始められるリンク集">
+  <div class="container">
+    <p class="kit-eyebrow">事前準備ゼロでOK ／ クリック1回で始められます</p>
+    <div class="kit-buttons">
+      <a class="kit-btn kit-btn-primary" href="https://notebooklm.google.com/" target="_blank" rel="noopener">
+        <span class="kit-btn-icon" aria-hidden="true">📒</span>
+        <span class="kit-btn-label">NotebookLMを開く</span>
+        <span class="kit-btn-sub">Googleでログイン → 新規ノートブック</span>
+      </a>
+      <a class="kit-btn" href="https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0626091806101/ksvol.1518.pdf" target="_blank" rel="noopener">
+        <span class="kit-btn-icon" aria-hidden="true">📄</span>
+        <span class="kit-btn-label">サンプルPDFをDL</span>
+        <span class="kit-btn-sub">介護保険最新情報 Vol.1518（2026/6/25）</span>
+      </a>
+      <button class="kit-btn" type="button" id="open-prompts">
+        <span class="kit-btn-icon" aria-hidden="true">💬</span>
+        <span class="kit-btn-label">プロンプトをコピー</span>
+        <span class="kit-btn-sub">3つのサンプルをまとめて</span>
+      </button>
+    </div>
+  </div>
+</section>
 
 <section class="hero">
   <div class="container hero-inner">
@@ -211,15 +237,23 @@
           <h3 class="step-title">質問する／変換させる</h3>
           <p>下のチャット欄に、こんな指示を打ち込んでみます。</p>
           <div class="prompt-card">
-            <p class="prompt-label">▼ プロンプト例（コピペOK）</p>
-            <pre class="prompt-code">この資料を、ケアマネジャー向けに3行で要約してください。
+            <p class="prompt-label">▼ プロンプト例①　3行で要約</p>
+            <button class="copy-btn" type="button" data-copy-target="p1">コピー</button>
+            <pre class="prompt-code" id="p1">この資料を、ケアマネジャー向けに3行で要約してください。
 専門用語は1度かみくだいてから使ってください。</pre>
           </div>
           <div class="prompt-card">
-            <p class="prompt-label">▼ 家族向けに変換</p>
-            <pre class="prompt-code">この資料の内容を、利用者のご家族（70代）にお渡しする
+            <p class="prompt-label">▼ プロンプト例②　家族向けに変換</p>
+            <button class="copy-btn" type="button" data-copy-target="p2">コピー</button>
+            <pre class="prompt-code" id="p2">この資料の内容を、利用者のご家族（70代）にお渡しする
 A4半分くらいの説明文に書き換えてください。
 むずかしい言葉は使わず、やさしい敬体（です・ます）で。</pre>
+          </div>
+          <div class="prompt-card">
+            <p class="prompt-label">▼ プロンプト例③　FAQを5つ作る</p>
+            <button class="copy-btn" type="button" data-copy-target="p3">コピー</button>
+            <pre class="prompt-code" id="p3">この資料を読んだ事業所の職員が抱きそうな質問を5つ挙げて、
+それぞれに資料の根拠を引きながら答えてください。</pre>
           </div>
         </div>
       </li>
@@ -233,12 +267,15 @@ A4半分くらいの説明文に書き換えてください。
     </ol>
 
     <div id="sample-source" class="sample-source">
-      <h3>今日のサンプル資料</h3>
-      <p>当日のデモでは <strong>厚生労働省「介護保険最新情報」の最新Vol.</strong> を1本使います。リンクから一覧に飛び、最新号のPDFをダウンロードしてください。</p>
+      <h3>今日のサンプル資料（PDF直リンク）</h3>
+      <p>当日のデモは <strong>★ Vol.1518</strong> を使います。 他の候補もすべて直リンクです。クリック1回でPDFが開きます。</p>
       <ul class="link-list">
-        <li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000206917_00045.html" target="_blank" rel="noopener">厚生労働省：介護保険最新情報（一覧ページ）</a></li>
+        <li>★ <a href="https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0626091806101/ksvol.1518.pdf" target="_blank" rel="noopener"><strong>Vol.1518</strong>（2026/6/25発出）社会福祉法等の一部を改正する法律の公布について</a></li>
+        <li><a href="https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0626091329375/ksvol.1517.pdf" target="_blank" rel="noopener">Vol.1517（2026/6/25発出）令和6年度介護報酬改定の効果検証及び調査研究に係る調査への協力依頼</a></li>
+        <li><a href="https://www.wam.go.jp/gyoseiShiryou-files/documents/2026/0624094432779/ksvol.1515.pdf" target="_blank" rel="noopener">Vol.1515（2026/6/23発出）介護老人福祉施設における診療行為に係る報酬給付調整関連リーフレットの見直し</a></li>
+        <li><a href="https://www.wam.go.jp/gyoseiShiryou/detail-list?bun=020060090" target="_blank" rel="noopener">WAM NET：介護保険最新情報（一覧）</a></li>
       </ul>
-      <p class="sample-tip">📌 一覧の上の方にある最新の Vol. をクリックするとPDFが開きます。それを保存してNotebookLMに入れる、というのが当日の手順です。</p>
+      <p class="sample-tip">📌 PDFをDLしたら、NotebookLMの「ソースを追加」からそのファイルを入れます。当日のデモはここからスタート。</p>
     </div>
   </div>
 </section>
@@ -283,6 +320,37 @@ A4半分くらいの説明文に書き換えてください。
 </section>
 
 </main>
+
+<div class="prompt-modal" id="prompt-modal" hidden role="dialog" aria-labelledby="prompt-modal-title" aria-modal="true">
+  <div class="prompt-modal-overlay" data-modal-close></div>
+  <div class="prompt-modal-content">
+    <button class="prompt-modal-close" type="button" data-modal-close aria-label="閉じる">×</button>
+    <h3 class="prompt-modal-title" id="prompt-modal-title">そのまま使えるサンプルプロンプト</h3>
+    <p class="prompt-modal-sub">「コピー」を押して NotebookLM のチャット欄に貼り付けてください。</p>
+
+    <div class="prompt-modal-item">
+      <p class="prompt-modal-label">① 3行で要約</p>
+      <pre class="prompt-modal-text" id="m1">この資料を、ケアマネジャー向けに3行で要約してください。
+専門用語は1度かみくだいてから使ってください。</pre>
+      <button class="copy-btn" type="button" data-copy-target="m1" style="position:static;">コピー</button>
+    </div>
+
+    <div class="prompt-modal-item">
+      <p class="prompt-modal-label">② 家族向けに変換</p>
+      <pre class="prompt-modal-text" id="m2">この資料の内容を、利用者のご家族（70代）にお渡しする
+A4半分くらいの説明文に書き換えてください。
+むずかしい言葉は使わず、やさしい敬体（です・ます）で。</pre>
+      <button class="copy-btn" type="button" data-copy-target="m2" style="position:static;">コピー</button>
+    </div>
+
+    <div class="prompt-modal-item">
+      <p class="prompt-modal-label">③ FAQを5つ作る</p>
+      <pre class="prompt-modal-text" id="m3">この資料を読んだ事業所の職員が抱きそうな質問を5つ挙げて、
+それぞれに資料の根拠を引きながら答えてください。</pre>
+      <button class="copy-btn" type="button" data-copy-target="m3" style="position:static;">コピー</button>
+    </div>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="container footer-inner">
